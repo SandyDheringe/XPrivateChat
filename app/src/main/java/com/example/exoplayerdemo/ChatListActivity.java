@@ -18,5 +18,7 @@ public class ChatListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_chat_list);
 
         ButterKnife.bind(this);
+
+        rvChatList.setAdapter(new ChatListAdapter());
     }
 }

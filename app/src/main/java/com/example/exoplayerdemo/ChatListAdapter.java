@@ -46,7 +46,7 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ChatVi
 
         }
 
-        public void init() {
+        public void bindView() {
 
         }
     }
