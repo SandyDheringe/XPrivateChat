@@ -37,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         tvSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this, VideoCallActivity.class));
+                startActivity(new Intent(LoginActivity.this, ChatActivity.class));
             }
         });
 

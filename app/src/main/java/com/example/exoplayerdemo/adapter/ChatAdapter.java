@@ -3,7 +3,6 @@ package com.example.exoplayerdemo.adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.exoplayerdemo.R;
@@ -21,17 +20,27 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {
+        View view;
+        switch (viewType)
+        {
+            case 0:
+                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_chat_message_sent, parent, false);
+                return new ChatSentViewHolder(view);
+            case 1:
+                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_chat_message_received, parent, false);
+                return new ChatReceiveViewHolder(view);
+            case 2:
+                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_currency_message_sent, parent, false);
+                return new ChatSentCurrencyViewHolder(view);
+            case 3:
+                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_currency_message_received, parent, false);
+                return new ChatReceiveCurrencyViewHolder(view);
 
-        if (viewType == 0)
-        {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_chat_message_sent, parent, false);
-            return new ChatSentViewHolder(view);
+            default:
+                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_chat_message_sent, parent, false);
+                return new ChatSentViewHolder(view);
         }
-        else
-        {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_chat_message_received, parent, false);
-            return new ChatReceiveViewHolder(view);
-        }
+
 
     }
 
@@ -40,16 +49,18 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     {
         if (holder instanceof ChatSentViewHolder)
             ((ChatSentViewHolder) holder).bindView(position);
-        else
+        else  if (holder instanceof ChatReceiveViewHolder)
             ((ChatReceiveViewHolder) holder).bindView(position);
+        else  if (holder instanceof ChatSentCurrencyViewHolder)
+            ((ChatSentCurrencyViewHolder) holder).bindView(position);
+        else  if (holder instanceof ChatReceiveCurrencyViewHolder)
+            ((ChatReceiveCurrencyViewHolder) holder).bindView(position);
     }
 
     @Override
     public int getItemViewType(int position)
     {
-        if (position % 2 == 0)
-            return 0;
-        else return 1;
+        return position % 4;
     }
 
     @Override
@@ -111,6 +122,67 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         {
             tvMessage.setText("This is demo message showing the appearance and layout - Sent");
             tvNickName.setText("John Cena");
+        }
+
+        @Override
+        public void onClick(View v)
+        {
+
+        }
+    }
+
+    class ChatReceiveCurrencyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
+    {
+
+        @BindView(R.id.tvMessage)
+        TextView tvMessage;
+
+        @BindView(R.id.tvAmount)
+        TextView tvAmount;
+
+        public ChatReceiveCurrencyViewHolder(@NonNull View itemView)
+        {
+            super(itemView);
+            ButterKnife.bind(this, itemView);
+            itemView.setOnClickListener(this);
+
+        }
+
+        public void bindView(int position)
+        {
+            tvMessage.setText("John Cena has sent you");
+            tvAmount.setText("2000 XPC");
+        }
+
+        @Override
+        public void onClick(View v)
+        {
+
+        }
+    }
+
+    class ChatSentCurrencyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
+    {
+
+        @BindView(R.id.tvMessage)
+        TextView tvMessage;
+
+        @BindView(R.id.tvAmount)
+        TextView tvAmount;
+
+
+        public ChatSentCurrencyViewHolder(@NonNull View itemView)
+        {
+            super(itemView);
+            ButterKnife.bind(this, itemView);
+            itemView.setOnClickListener(this);
+
+        }
+
+        public void bindView(int position)
+        {
+            tvMessage.setText("You have sent");
+            tvAmount.setText("500 XPC");
         }
 
         @Override

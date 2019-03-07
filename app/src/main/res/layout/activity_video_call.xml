@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/sehwag" />
+        android:src="@drawable/video_called" />
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -35,13 +35,13 @@
                 android:id="@+id/ivAvtar"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                android:src="@drawable/veru" />
+                android:src="@drawable/charo" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
-                android:text="Virender Sehwag"
+                android:text="CHARLOTTE MARTIN"
                 android:textColor="@android:color/white"
                 android:textSize="30sp" />
 
@@ -54,11 +54,11 @@
         </LinearLayout>
 
 
-        <ImageButton
+        <ImageView
             android:visibility="visible"
             android:layout_marginRight="16dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/zahir"
+            android:src="@drawable/video_caller"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="16dp"

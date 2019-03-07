@@ -3,12 +3,12 @@
     android:shape="rectangle"
     android:thicknessRatio="1.9"
     android:useLevel="false" >
-    <solid android:color="#C82F4BE6" />
+    <solid android:color="#C85169EE" />
 
     <corners android:radius="10dp"/>
     <padding  android:bottom="5dp"
-        android:left="20dp"
-        android:right="20dp"
+        android:left="10dp"
+        android:right="10dp"
         android:top="5dp"/>
 
 </shape>
