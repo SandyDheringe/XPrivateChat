@@ -4,75 +4,83 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_gravity="center_vertical"
     android:padding="20dp"
     tools:context=".RegisterActivity">
 
 
     <ImageView
-        android:textColor="@color/colorAccent"
         android:id="@+id/tvTitle"
-        android:textSize="25dp"
-        android:textStyle="italic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_xchat"
+        android:src="@drawable/login_logo"
+        android:textColor="@color/colorAccent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
     <EditText
-        android:layout_marginTop="20dp"
         android:id="@+id/etUsername"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter blockchain Address"
+        style="@style/style_edittext"
+        android:layout_marginTop="80dp"
+        android:hint="@string/blockchain_address"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvTitle" />
 
     <EditText
         android:id="@+id/etPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Password"
+        style="@style/style_edittext"
+        android:layout_marginTop="30dp"
+        android:hint="@string/password"
         android:inputType="textPassword"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etUsername" />
 
+
     <EditText
         android:id="@+id/etReenterPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Reenter Password"
+        style="@style/style_edittext"
+        android:layout_marginTop="30dp"
+        android:hint="@string/re_enter_password"
         android:inputType="textPassword"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etPassword" />
 
     <TextView
-        android:textColor="@color/colorAccent"
-        android:layout_marginTop="10dp"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
         android:id="@+id/tvDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="If you forget your password you will loose your account"
+        android:layout_marginTop="15dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="@string/if_you_forget_your_password_you_will_loose_your_account"
+        android:textColor="@color/colorAccent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etReenterPassword" />
 
 
     <Button
         android:id="@+id/btnRegister"
-        android:textColor="@android:color/white"
-        android:background="@color/colorAccent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Register"
+        style="@style/style_button"
+        android:layout_marginTop="30dp"
+        android:text="@string/register"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvDescription" />
+
+
+    <TextView
+        android:id="@+id/tvTNC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="@string/terms_conditions"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnRegister" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

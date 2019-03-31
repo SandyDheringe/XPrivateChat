@@ -4,37 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_gravity="center_vertical"
     android:padding="20dp"
     tools:context=".LoginActivity">
 
     <ImageView
+        android:layout_marginTop="30dp"
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_xchat"
+        android:src="@drawable/login_logo"
         android:textColor="@color/colorAccent"
-        android:textSize="25dp"
-        android:textStyle="italic"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
     <EditText
-        android:layout_marginTop="30dp"
         android:id="@+id/etUsername"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter blockchain Address"
+        style="@style/style_edittext"
+        android:layout_marginTop="80dp"
+        android:hint="@string/blockchain_address"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvTitle" />
 
     <EditText
         android:id="@+id/etPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Password"
+        style="@style/style_edittext"
+        android:layout_marginTop="30dp"
+        android:hint="@string/password"
         android:inputType="textPassword"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etUsername" />
@@ -42,24 +39,21 @@
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@color/colorAccent"
-        android:text="Login"
-        android:textColor="@android:color/white"
+        style="@style/style_button"
+        android:layout_marginTop="30dp"
+        android:text="@string/login"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etPassword" />
 
     <TextView
-        android:textColor="@color/colorAccent"
-        android:layout_marginTop="20dp"
-        app:layout_constraintRight_toRightOf="parent"
         android:id="@+id/tvSignUp"
-        app:layout_constraintTop_toBottomOf="@id/btnLogin"
-        app:layout_constraintLeft_toLeftOf="parent"
         android:layout_width="wrap_content"
-        android:text="Need an Account? SIGN UP"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/need_an_account_sign_up"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnLogin" />
 </androidx.constraintlayout.widget.ConstraintLayout>

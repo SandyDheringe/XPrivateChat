@@ -1,4 +1,20 @@
 <resources>
     <string name="app_name">Xprivate Chat</string>
     <string name="title_activity_audio_call">AudioCallActivity</string>
+
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="blockchain_address">Blockchain Address</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="need_an_account_sign_up">Need an Account? SIGN UP</string>
+    <string name="re_enter_password">Re-enter Password</string>
+    <string name="if_you_forget_your_password_you_will_loose_your_account">If you forget your password you will loose your account</string>
+    <string name="register">Register</string>
+    <string name="terms_conditions"><![CDATA[Terms & Conditions]]></string>
+    <string name="save">Save</string>
+    <string name="nickname">Nickname</string>
+    <string name="str_congrats_desc">You have just earned 100 XPC token. The same has been credited to your XPC wallet. You can now benifit from this in the form of XPC premium service or have it exchanged with any crypto currencies listed in XPrivate Wallet.</string>
+    <string name="earn_now">Earn Now</string>
 </resources>
